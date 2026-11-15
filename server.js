@@ -1,11 +1,16 @@
 import express from 'express'
 import Game from "./models/Game.js";
 import Cart from "./models/Cart.js";
+import User from "./models/User.js";
 
 const app = express();
 const port = 3000;
 
 const cart = new Cart();
+
+const users = [];
+const user = new User(1, "Alex", "alex@example.com");
+users.push(user);
 
 const games = [
     new Game(1, "Minecraft", "Sandbox", 29.99, "/images/minecraft.jpg"),
@@ -17,6 +22,7 @@ const games = [
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req,res) => {
     res.render('home', { title: 'GameVault - Home'});
@@ -38,7 +44,10 @@ app.get("/cart", (req, res) => {
 });
 
 app.get("/account", (req, res) => {
-    res.render("account", { title: "GameVault - Account" });
+    res.render("account", {
+        title: "GameVault - Account",
+        user: user
+    });
 });
 
 app.post("/cart/add/:id", (req, res) => {
@@ -61,6 +70,19 @@ app.post("/cart/remove/:id", (req, res) => {
     cart.removeGame(id);
 
     res.redirect("/cart");
+});
+
+app.post("/account/update", (req, res) => {
+    const { name, email } = req.body;
+
+    if (!name?.trim() || !email?.trim()) {
+        return res.status(400).send("Name and email are required");
+    }
+
+    user.name = name.trim();
+    user.email = email.trim();
+
+    res.redirect("/account");
 });
 
 app.listen(port, () => {
