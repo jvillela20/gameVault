@@ -56,3 +56,39 @@ footer {
     padding: 1rem;
     background-color: var(--nav-bg);
 }
+
+.cart-container {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.cart-image {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-details {
+    flex: 1;
+}
+
+.cart-details h3 {
+    margin-top: 0;
+}
+
+.cart-summary {
+    max-width: 900px;
+    margin: 25px auto;
+    text-align: right;
+}
