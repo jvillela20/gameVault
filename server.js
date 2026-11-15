@@ -2,11 +2,14 @@ import express from 'express'
 import Game from "./models/Game.js";
 import Cart from "./models/Cart.js";
 import User from "./models/User.js";
+import Order from "./models/Order.js";
 
 const app = express();
 const port = 3000;
 
 const cart = new Cart();
+
+const orders = [];
 
 const users = [];
 const user = new User(1, "Alex", "alex@example.com");
@@ -83,6 +86,39 @@ app.post("/account/update", (req, res) => {
     user.email = email.trim();
 
     res.redirect("/account");
+});
+
+app.post("/order/place", (req, res) => {
+    if (cart.items.length === 0) {
+        return res.redirect("/cart");
+    }
+
+    const order = new Order(
+        orders.length + 1,
+        user,
+        cart.items
+    );
+
+    orders.push(order);
+
+    cart.items = [];
+
+    res.redirect(`/order/${order.id}`);
+});
+
+app.get("/order/:id", (req, res) => {
+    const id = Number(req.params.id);
+
+    const order = orders.find(order => order.id === id);
+
+    if (!order) {
+        return res.status(404).send("Order not found");
+    }
+
+    res.render("order", {
+        title: "GameVault - Order Confirmation",
+        order: order
+    });
 });
 
 app.listen(port, () => {
