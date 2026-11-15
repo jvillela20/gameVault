@@ -3,4 +3,25 @@
 <h2>Game Catalog</h2>
 <p>Browse our available video games.</p>
 
+<div class="game-container">
+    <% games.forEach(game => { %>
+        <div class="game-card">
+
+            <img src="<%= game.image %>"
+                 alt="<%= game.title %>"
+                 width="180"
+                 height="240">
+
+            <h3><%= game.title %></h3>
+            <p>Genre: <%= game.genre %></p>
+            <p>Price: $<%= game.price.toFixed(2) %></p>
+
+            <button type="button">Add to Cart</button>
+
+        </div>
+    <% }) %>
+</div>
+
+
 <%- include("partials/footer") %>
+
