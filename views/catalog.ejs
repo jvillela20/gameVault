@@ -16,7 +16,9 @@
             <p>Genre: <%= game.genre %></p>
             <p>Price: $<%= game.price.toFixed(2) %></p>
 
-            <button type="button">Add to Cart</button>
+            <form action="/cart/add/<%= game.id %>" method="POST">
+                <button type="submit">Add to Cart</button>
+            </form>
 
         </div>
     <% }) %>

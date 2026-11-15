@@ -1,8 +1,11 @@
 import express from 'express'
 import Game from "./models/Game.js";
+import Cart from "./models/Cart.js";
 
 const app = express();
 const port = 3000;
+
+const cart = new Cart();
 
 const games = [
     new Game(1, "Minecraft", "Sandbox", 29.99, "/images/minecraft.jpg"),
@@ -27,11 +30,37 @@ app.get("/catalog", (req, res) => {
 });
 
 app.get("/cart", (req, res) => {
-    res.render("cart", { title: "GameVault - Cart" });
+    res.render("cart", {
+        title: "GameVault - Cart",
+        items: cart.items,
+        total: cart.getTotal()
+    });
 });
 
 app.get("/account", (req, res) => {
     res.render("account", { title: "GameVault - Account" });
+});
+
+app.post("/cart/add/:id", (req, res) => {
+    const id = Number(req.params.id);
+
+    const game = games.find(game => game.id === id);
+
+    if (!game) {
+        return res.status(404).send("Game not found");
+    }
+
+    cart.addGame(game);
+
+    res.redirect("/cart");
+});
+
+app.post("/cart/remove/:id", (req, res) => {
+    const id = Number(req.params.id);
+
+    cart.removeGame(id);
+
+    res.redirect("/cart");
 });
 
 app.listen(port, () => {
