@@ -92,3 +92,687 @@ footer {
     margin: 25px auto;
     text-align: right;
 }
+
+/*review page*/
+.review-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+}
+
+.review-container h3 {
+    margin-bottom: 20px;
+}
+
+.review-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.review-container label {
+    font-weight: bold;
+}
+
+.review-container select,
+.review-container textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: var(--card-bg, #ffffff);
+    color: var(--text-color, #222222);
+}
+
+.review-container button {
+    padding: 12px 20px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.review-item {
+    background-color: var(--card-bg, #ffffff);
+    color: var(--text-color, #222222);
+    border: 1px solid #888;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.review-item h4 {
+    margin-bottom: 10px;
+}
+
+.review-item p {
+    margin: 8px 0;
+}
+
+/*account page*/
+.account-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--card-bg, #ffffff);
+    border: 1px solid var(--nav-bg);
+    border-radius: 10px;
+}
+
+.account-container h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.account-container p {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+}
+
+.account-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.account-container label {
+    font-weight: bold;
+}
+
+.account-container input {
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.account-container button {
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.account-container button:hover {
+    opacity: 0.9;
+}
+
+/* Order Confirmation Page */
+
+.order-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--card-bg, #ffffff);
+    border: 1px solid var(--nav-bg);
+    border-radius: 10px;
+}
+
+.order-success {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+}
+
+.order-success h3 {
+    color: #198754;
+    margin-bottom: 10px;
+}
+
+.order-info {
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+}
+
+.order-info p {
+    margin: 10px 0;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid var(--nav-bg);
+    border-radius: 10px;
+}
+
+.order-image {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.order-details {
+    flex: 1;
+}
+
+.order-details h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.order-details p {
+    margin: 8px 0;
+}
+
+.order-summary {
+    text-align: right;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 2px solid var(--nav-bg);
+}
+
+.order-summary h3 {
+    color: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .order-container {
+        padding: 15px;
+    }
+
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-image {
+        width: 90px;
+        height: 120px;
+    }
+}
+
+/* GAMEVAULT GAMING THEME */
+
+:root {
+    --background: #0b0b16;
+    --card: #19192d;
+    --purple: #8b5cf6;
+    --purple-light: #a78bfa;
+    --text: #f5f5ff;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+}
+
+/* HEADINGS */
+
+h1, h2, h3 {
+    color: var(--text);
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 35px 0;
+}
+
+/* NAVIGATION */
+
+header, nav {
+    background: #121225;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--purple-light);
+}
+
+/* GAME CARDS */
+
+.game-card {
+    background: var(--card);
+    border: 1px solid #30304d;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+}
+
+.game-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #10101c;
+}
+
+/* BUTTONS */
+
+.btn, button {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover, button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 18px rgba(168, 85, 247, 0.6);
+}
+
+/* REVIEWS */
+
+.review-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background: var(--card);
+    border-radius: 15px;
+}
+
+.review-item {
+    background: #22223b;
+    border-left: 4px solid var(--purple);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+/* FORMS */
+
+input, select, textarea {
+    background: #25253c;
+    color: white;
+    border: 1px solid #454566;
+    border-radius: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--purple);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 26px;
+    }
+
+    .game-card {
+        margin-bottom: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Game catalog layout */
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Individual game cards */
+.game-card {
+    background: #19192d;
+    border: 1px solid #30304d;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.game-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #10101c;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .game-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* GAMEVAULT HOMEPAGE */
+
+/* Hero Banner */
+.hero {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 58, 237, 0.3),
+            transparent 65%
+        ),
+        linear-gradient(135deg, #101020, #1b1038);
+
+    border-bottom: 1px solid #38305c;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-label {
+    color: #c4b5fd;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    margin: 25px 0;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #a855f7;
+}
+
+.hero p {
+    color: #c4c4d8;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* Hero Button */
+.hero-button,
+.featured-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-button:hover,
+.featured-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+}
+
+/* Featured Games */
+.featured-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.featured-section h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.featured-section > p {
+    color: #aaaac0;
+    margin-bottom: 35px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.featured-card {
+    background: #19192d;
+    border: 1px solid #30304d;
+    border-radius: 16px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.featured-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.3);
+}
+
+/* Show full game images */
+.featured-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #10101c;
+    border-radius: 10px;
+}
+
+.featured-card h3 {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.featured-card p {
+    color: #b8b8ca;
+    min-height: 45px;
+}
+
+.featured-button {
+    margin-top: 10px;
+    padding: 12px 22px;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 800px) {
+    .featured-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 300px;
+        padding: 45px 20px;
+    }
+}
+
+/* ACCOUNT PAGE */
+
+.account-page {
+    background: #0b0b16;
+    color: #f5f5ff;
+    min-height: 80vh;
+    padding: 50px 20px;
+}
+
+.account-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.account-container > h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.account-subtitle {
+    text-align: center;
+    color: #aaaac0;
+    margin-bottom: 35px;
+}
+
+/* Account Cards */
+
+.account-card {
+    background: #19192d;
+    border: 1px solid #30304d;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.account-card h2 {
+    text-align: left;
+    font-size: 24px;
+    margin: 0 0 25px;
+    color: white;
+}
+
+/* User Information */
+
+.account-info p {
+    background: #25253c;
+    color: #e5e5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.account-info strong {
+    color: #c4b5fd;
+}
+
+/* Update Form */
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.account-form label {
+    color: #e5e5f5;
+    font-weight: bold;
+}
+
+.account-form input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #454566;
+    border-radius: 8px;
+    background: #25253c;
+    color: white;
+    font-size: 16px;
+}
+
+.account-form input:focus {
+    outline: 2px solid #a855f7;
+}
+
+.account-form .account-button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.account-form .account-button:hover {
+    box-shadow: 0 0 20px rgba(168,85,247,0.5);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .account-card {
+        padding: 20px;
+    }
+}
+
+body {
+    background: #0b0b16;
+    color: white;
+}
+
+.account-page {
+    background: #0b0b16;
+    color: white;
+    min-height: 100vh;
+}
+
+.account-container {
+    background: transparent;
+}
+
+.account-container > h1 {
+    color: white;
+    background: transparent;
+}
+
+.account-subtitle {
+    color: #b8b8d0;
+    background: transparent;
+}

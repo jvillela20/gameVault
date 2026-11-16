@@ -1,9 +1,55 @@
-<%- include('partials/header') %>
+<%- include("partials/header") %>
 
-<section class="hero">
-    <h2>Welcome to GameVault</h2>
-    <p>Browse available games, manage your shopping cart, and place orders in one simple platform.</p>
-    <a href="/catalog">Shop Now</a>
-</section>
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">WELCOME TO GAMEVAULT</span>
 
-<%- include('partials/footer') %>
+            <h1>LEVEL UP YOUR <span>GAMING</span></h1>
+
+            <p>
+                Discover amazing games, explore new worlds,
+                and find your next adventure at GameVault.
+            </p>
+
+            <a href="/catalog" class="hero-button">
+                Explore Games
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section class="featured-section">
+        <h2>🔥 Featured Games</h2>
+
+        <p>
+            Explore our collection of popular games.
+        </p>
+
+        <div class="featured-grid">
+            <div class="featured-card">
+                <img src="/images/minecraft.jpg" alt="Minecraft">
+                <h3>Minecraft</h3>
+                <p>Build your own adventure.</p>
+                <a href="/catalog" class="featured-button">Shop Now</a>
+            </div>
+
+            <div class="featured-card">
+                <img src="/images/elderRing.jpg" alt="Elden Ring">
+                <h3>Elden Ring</h3>
+                <p>Explore a legendary fantasy world.</p>
+                <a href="/catalog" class="featured-button">Shop Now</a>
+            </div>
+
+            <div class="featured-card">
+                <img src="/images/gtaV.jpg" alt="GTA V">
+                <h3>GTA V</h3>
+                <p>Experience an action-packed adventure.</p>
+                <a href="/catalog" class="featured-button">Shop Now</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include("partials/footer") %>

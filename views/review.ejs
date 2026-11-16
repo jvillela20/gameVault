@@ -1,0 +1,88 @@
+<%- include("partials/header") %>
+
+<h2>Game Reviews</h2>
+
+<div class="review-container">
+
+    <h3>Write a Review</h3>
+
+    <form action="/reviews/add" method="POST">
+
+        <label for="gameId">Select Game:</label>
+        <select name="gameId" id="gameId" required>
+            <% games.forEach(game => { %>
+                <option value="<%= game.id %>">
+                    <%= game.title %>
+                </option>
+            <% }) %>
+        </select>
+
+        <label for="rating">Rating:</label>
+        <select name="rating" id="rating" required>
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>
+
+        <label for="comment">Comment:</label>
+        <textarea
+            name="comment"
+            id="comment"
+            rows="4"
+            placeholder="Write your review here..."
+            required
+        ></textarea>
+
+        <button type="submit" class="btn">
+            Submit Review
+        </button>
+
+    </form>
+
+    <h3>Customer Reviews</h3>
+
+    <% if (reviews.length === 0) { %>
+
+        <p>No reviews yet. Be the first to write one!</p>
+
+    <% } else { %>
+
+        <% reviews.forEach(review => { %>
+
+            <div class="review-item">
+
+                <h4><%= review.game.title %></h4>
+
+                <p>
+                    <strong>Reviewer:</strong>
+                    <%= review.user.name %>
+                </p>
+
+                <p>
+                    <strong>Rating:</strong>
+                    <%= review.rating %>/5 ⭐
+                </p>
+
+                <p>
+                    <strong>Comment:</strong>
+                    <%= review.comment %>
+                </p>
+
+                <p>
+                    <small>
+                        Date:
+                        <%= review.date.toLocaleDateString() %>
+                    </small>
+                </p>
+
+            </div>
+
+        <% }) %>
+
+    <% } %>
+
+</div>
+
+<%- include("partials/footer") %>
